@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class = "container">
+        <!-- Item Id and Item Name Table -->
+        <div class = "row">
+            <div class = "col-12">
+                <table class="table table-success table-striped">
+                    <tr>
+                        <th>Item_ID</th>
+                        <th>Item_Name</th>
+                    </tr>    
+                    <tr>
+                        <td>1001A</td>
+                        <td>Mango</td>
+                    </tr>
+                    <tr>
+                        <td>1002B</td>
+                        <td>Apple</td>
+                    </tr>
+                    <tr>
+                        <td>1002A</td>
+                        <td>Kiwi</td>
+                    </tr>
+                    <tr>
+                        <td>1214Z</td>
+                        <td>Banana</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- input -->
+        <div class = "row">
+            <div class = "col-12" style="margin: 10px 0px;">
+                ITEM ID
+                <input type = "text" placeholder = "Enter ITEM ID" class = "form-control" id = "item_id" onchange = "valid_id()">
+            </div>
+            <div class = "col-12" style="margin: 10px 0px;">
+                Quantity
+                <input type = "number" placeholder = "0" class = "form-control" id = "qty">
+            </div>
+        </div>
+        <!-- Add Button -->
+        <div class = "row">
+            <div class = "col-3">
+                <button class = "form-control btn-primary" onclick = "addEle()">ADD</button>
+            </div>
+        </div>
+        <!-- Bill -->
+        <div class = "row">
+                <div class = "col-12">
+                    <table class="table table-success table-striped" id = "tb">
+                        <th>Item_ID</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </table>
+                </div>
+        </div>
+        <!-- Total Price -->
+        <div class = "row">
+            <div class = "col-9"></div>
+            <div class = "col-3"><b>Total Price</b><input type = "text" id = "tt" placeholder = "0" value = 0 class = "form-control"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script>
+        let price = {
+            "1001A" : 80,
+            "1002B" : 300,
+            "1002A" : 180,
+            "1214Z" : 50
+        }
+
+        let check = {
+            
+        }
+
+        function valid_id(){
+            let item = document.getElementById('item_id');
+            if(!(item.value in price)){
+                window.alert("Enter valid ITEM ID");
+                item.value = "";
+                item.focus();
+            }
+        }
+
+        function addEle(){
+            let item = document.getElementById('item_id');
+            let qty = document.getElementById('qty');
+            let table1 = document.getElementById('tb');
+
+            if(qty.value < "0"){
+                window.alert("Enter valid Quantity");
+                qty.value = "";
+                qty.focus();
+                return;
+            }
+
+            if(item.value == "")window.alert("Please enter Item ID");
+            else if(qty.value == "")window.alert("Please enter Quantity");
+            else{
+
+                let tot_price = price[item.value] * (qty.value);
+
+                if(!(item.value in check)){
+                    const r = document.createElement('tr')
+
+                    const h1 = document.createElement('th');
+                    const h2 = document.createElement('th');
+                    h2.setAttribute('id',item.value + 'h2')
+                    const h3 = document.createElement('th');
+                    const h4 = document.createElement('th');
+                    h4.setAttribute('id',item.value + 'h4')
+                    
+                    h1.innerHTML = item.value;
+                    h2.innerHTML = qty.value;
+                    h3.innerHTML = price[item.value];
+                    h4.innerHTML = tot_price;
+                    r.appendChild(h1);r.appendChild(h2);r.appendChild(h3);r.appendChild(h4);
+                    table1.appendChild(r);
+
+                    check[item.value] = [qty.value , tot_price];
+                }
+                else{
+                    let new_qty = Number(check[item.value][0]) + Number(qty.value);
+                    let new_price = Number(check[item.value][1]) + Number(tot_price);
+                    
+                    document.getElementById(item.value + 'h2').innerHTML = new_qty;
+                    document.getElementById(item.value + 'h4').innerHTML = new_price;
+                }
+
+                let tot = document.getElementById('tt');
+                tot.value = Number(tot.value) + Number(tot_price);
+
+                item.value = "";
+                qty.value = "";
+                item.focus();
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal</title>
+    <script>
+        function Solve(){
+            let x = document.getElementById("calc").value;
+            document.getElementById('pa').innerHTML = "Ans: " + eval(x);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input id = "calc" type = "text" placeholder = "Expression">
+    </form>
+    <br>
+    <button onclick = Solve()>
+        Solve
+    </button>
+    <p id = 'pa'></p>
+    
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+</head>
+<body>
+
+    <h1 align = "center" style = "background-color: blue; color: white">  Welcome  </h1>
+
+    <div style = "margin:0px 600px 0px; border: solid black; padding: 25px; background-color: rgb(203, 248, 114);">
+
+        
+            <label for = "Name">Name: </label>
+            <input onclick = "fun5()" onmouseenter = "fun3(this)" onmouseleave="fun4(this)" type = "text" id = "Name" placeholder = "Enter Name"><br><br>
+            <label for = "Age">Age: </label>
+            <input onclick = "" onmouseenter = "fun3(this)" onmouseleave="fun4(this)" type = "text" id = "Age" placeholder = "Enter Age"><br><br>
+
+        <button onclick = fun1() style = "background-color: rgb(48, 48, 231); color: white;">Agree</button>
+        <button onclick = fun2() style = "background-color: rgb(48, 48, 231); color: white;">Disagree</button>
+
+    </div>
+    
+    <p id = 'p'></p>
+    <p id = 'p2'></p>
+
+    <!-- javascript code starts here -->
+    <script>
+        function fun1(){
+            let name = document.getElementById('Name').value;
+            let age = document.getElementById('Age').value;
+
+            if(name == "" && age == ""){
+                window.alert("Please Enter Name and Age");
+            }
+            else if(name == "")window.alert("Please Enter Name");
+            else if(age == "")window.alert("Please Enter Age");
+            else{
+                document.getElementById('p').innerHTML = "Welcome Mr/Mrs " + name + "."; 
+                document.getElementById('p2').innerHTML = "You are " + age + " years old.";
+            }
+        }
+        function fun2(){
+            document.getElementById('p').innerHTML = " "; 
+            document.getElementById('p2').innerHTML = " ";
+            document.getElementById('Name').value = "";
+            document.getElementById('Age').value = "";
+        }
+        function fun3(x){
+            x.style.height = "30px";
+        }
+        function fun4(x){
+            x.style.height = "20px";
+        }
+        function fun5(x){
+            document.getElementById('Name').setAttribute('style','background-color : grey');
+        }
+        function fun6(){
+            document.getElementById('Age').setAttribute('style','background-color : grey');
+        }
+    </script>
+</body>
+</html>

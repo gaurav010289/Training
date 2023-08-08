@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        h1{
+            background-color: black;
+            color : white;
+            text-align: center;
+        }
+        img{
+            height : 500px;
+        }
+        button{
+            color: black;
+        }
+        .nav{
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Training Portfolio</h1>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Training</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#week1">Week 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#week2">Week 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#week3">Week 3</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#week5">Project</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Javascript
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../assignments/agree.html">Agree Disagree</a></li>
+                  <li><a class="dropdown-item" href="../assignments/calculator.html">Calculator</a></li>
+                  <li><a class="dropdown-item" href="../assignments/achievement.html">Achievements</a></li>
+                  <li><a class="dropdown-item" href="../assignments/tables.html">Tables</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- caraosel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner" style>
+          <div class="carousel-item active">
+            <img src="../images/crc1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/crc2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- week1 -->
+    <div class = "container-fluid mb-5" id = "week1" style = "background-color: aqua;">
+        <div class = "row">
+            <div class = "col-md-12" style = "background-color: black; color: white; text-align: center;"><h3>Week 1</h3></div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/timetable.png" class="card-img-top" alt="timetable image" style="height: 200px;width : 250px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Time Table</h5>
+                      <p class="card-text">Made a Time-Table using HTML tables and styled by using CSS.</p>
+                      <a href="../assignments/timetable.html" class="btn btn-primary">Have a Look</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class = "col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/design.png" class="card-img-top" alt="css design" style="height: 200px;width : 280px;">
+                    <div class="card-body">
+                      <h5 class="card-title">CSS Design</h5>
+                      <p class="card-text">Made a Nav Bar using CSS. Learnt to use divisions.</p>
+                      <a href="../assignments/front.html" class="btn btn-primary">Have a Look</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class = "col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/caraosel.png" class="card-img-top" alt="bootstrap design" style="height: 200px;width : 280px;">
+                    <div class="card-body">
+                      <h5 class="card-title">BootStrap Design</h5>
+                      <p class="card-text">NavBar with Carousel (Slider) Page (with images) using bootstrap5.</p>
+                      <a href="../assignments/navbar.html" class="btn btn-primary">Have a Look</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- week2 -->
+    <div class = "container-fluid mb-5" id = "week2" style = "background-color:bisque;">
+        <div class = "row">
+            <div class = "col-md-12" style = "background-color: black; color: white; text-align: center;"><h3>Week 2</h3></div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/agree.png" class="card-img-top" alt="timetable image" style="height: 200px;width : 250px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Javascript</h5>
+                      <p class="card-text">First project of javascript. Made a Dynamic agree and disagree button.</p>
+                      <a href="../assignments/agree.html" class="btn btn-primary">Have a Look</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class = "col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Calculator.png" class="card-img-top" alt="css design" style="height: 200px;width : 280px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Calculator</h5>
+                      <p class="card-text">Made a Calculator using HTML,CSS,Bootstrap and JavaScript.</p>
+                      <a href="../assignments/calculator.html" class="btn btn-primary">Have a Look</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class = "col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/achieve.png" class="card-img-top" alt="bootstrap design" style="height: 200px;width : 280px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Dynamic Table</h5>
+                      <p class="card-text">Made a table with Dynamic add row control which will save your achievements.</p>
+                      <a href="../assignments/achievement.html" class="btn btn-primary">Have a Look</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- week3     -->
+    <div class = "container-fluid mb-5" id = "week3" style = "background-color:yellow;">
+      <div class = "row">
+          <div class = "col-md-12" style = "background-color: black; color: white; text-align: center;"><h3>Week 3</h3></div>
+      </div>
+      <div class = "row">
+          <div class = "col-md-4">
+              <div class="card" style="width: 18rem;">
+                  <img src="../images/bill.png" class="card-img-top" alt="bill image" style="height: 200px;width : 250px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Bill</h5>
+                    <p class="card-text">A Bill app which calculates toll bill amount and show items addes in cart.</p>
+                    <a href="../bill.html" class="btn btn-primary">Have a Look</a>
+                  </div>
+                </div>
+          </div>
+
+          <div class = "col-md-4">
+              <div class="card" style="width: 18rem;">
+                  <img src="../images/Filter.png" class="card-img-top" alt="css design" style="height: 200px;width : 280px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Filtering</h5>
+                    <p class="card-text">Made a Filter which filters all persons based on their age with three pre buttons.</p>
+                    <a href="../filter.html" class="btn btn-primary">Have a Look</a>
+                  </div>
+                </div>
+          </div>
+
+          <div class = "col-md-4">
+              <div class="card" style="width: 18rem;">
+                  <img src="../images/Login.png" class="card-img-top" alt="bootstrap design" style="height: 200px;width : 280px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <p class="card-text">Made a login page with usedid and password validation. The data is preset in the object of javascript.</p>
+                    <a href="../login.html" class="btn btn-primary">Have a Look</a>
+                  </div>
+                </div>
+          </div>
+      </div>
+  </div>
+
+
+</body>
+</html>

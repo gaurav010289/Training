@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Login</h1>
+    <div style = "margin:0px 600px 0px; border: solid black; padding: 25px; background-color: rgb(203, 248, 114);">
+
+        
+        <label for = "Login">USER ID: </label>
+        <input type = "text" id = "Login" placeholder = "Enter USER ID"><br><br>
+        <label for = "pass">Password: </label>
+        <input type = "password" id = "pass" placeholder = "Enter Password"><br><br>
+
+        <button onclick = valid_pass() style = "background-color: rgb(48, 48, 231); color: white;">Sign In</button>
+        <button onclick = res() style = "background-color: rgb(48, 48, 231); color: white;">Reset</button>
+
+    </div>
+
+    <script>
+        let Users = {"abc1@gmail.com" : "123456789" , 
+                     "xyz12@gmail.com" : "987654321",
+                     "pqr12@gmail.com" : "098765432",
+                     "anmolkmr@gmail.com" : "123456780"};
+        
+        function valid_pass(){
+            let ID = document.getElementById('Login');
+            let pass = document.getElementById('pass');
+            var usr = ID.value.toLowerCase();
+            if(!(usr in Users)){
+                window.alert("Enter Valid Credentials");
+                ID.value = "";
+                ID.focus();
+                return;
+            }
+            if(Users[usr] != pass.value){
+                window.alert("Enter Valid Credentials");
+                pass.value = "";
+                pass.focus();
+            }
+            else{
+                window.alert("Succesfull Login")
+            }
+            res();
+            ID.focus();
+        }
+
+        function res(){
+            let ID = document.getElementById('Login');
+            let pass = document.getElementById('pass');
+            ID.value = "";
+            pass.value  = "";
+        }
+    </script>
+</body>
+</html>

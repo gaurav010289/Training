@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        div{
+            padding : 2px;
+            text-align: center;
+        } 
+    </style>
+</head>
+<body>
+    <h1 align = "center">Calculator</h1>
+    <div class = "conatiner" style = "border : solid blue; margin: 25px 345px 25px; background-color: blue;">
+        <div class = "row">
+            <div class = "col-md-9">
+                <input type = "text" class = "form-control" id = "inp" placeholder = "0" onkeydown = "fun1(event)">
+            </div>
+            <div class = "col-md-3">
+                <button class = "form-control" onclick = "click1('c')">Clear</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-9">
+                <div class  = "row">
+                    <div class = "col-md-4">
+                        <button onclick = "click1('9')" class = "form-control">9</button>
+                    </div>
+                    <div class = "col-md-4"><button onclick = "click1('8')" class = "form-control">8</button></div>
+                    <div class = "col-md-4"><button onclick = "click1('7')" class = "form-control">7</button></div>
+                </div>
+                <div class = "row">
+                    <div class = "col-md-4"><button onclick = "click1('6')" class = "form-control">6</button></div>
+                    <div class = "col-md-4"><button onclick = "click1('5')" class = "form-control">5</button></div>
+                    <div class = "col-md-4"><button onclick = "click1('4')" class = "form-control">4</button></div>
+                </div>
+            </div>
+            <div class = "col-md-3">
+                <button onclick = "click1('=')" style = "height : 90px" class = "form-control">=</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-3"><button onclick = "click1('3')" class = "form-control">3</button></div>
+            <div class = "col-md-3"><button onclick = "click1('2')" class = "form-control">2</button></div>
+            <div class = "col-md-3"><button onclick = "click1('1')" class = "form-control">1</button></div>
+            <div class = "col-md-3"><button onclick = "click1('*')" class = "form-control">*</button></div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-3"><button onclick = "click1('0')" class = "form-control">0</button></div>
+            <div class = "col-md-3"><button onclick = "click1('+')" class = "form-control">+</button></div>
+            <div class = "col-md-3"><button onclick = "click1('-')" class = "form-control">-</button></div>
+            <div class = "col-md-3"><button onclick = "click1('/')" class = "form-control">/</button></div>
+        </div>
+    </div>
+
+    <script>
+        function click1(x){
+            let val = document.getElementById('inp').value;
+            if(x == "=")document.getElementById('inp').value = eval(val);
+            else if(x == 'c')document.getElementById('inp').value = "";
+            else  document.getElementById('inp').value = val+ x; 
+        }
+        function fun1(event){
+            let ke = event.key;
+            let val = document.getElementById('inp').value;
+            if(ke == '=' || ke == "ENTER")document.getElementById('inp').value = eval(val);
+        }
+    </script>
+</body>
+</html>
